@@ -12,8 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Controller用来操作数据表
+ * */
+
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/users")//地址栏映射控制器，
 public class UsersController {
     @Resource(name = "usersServiceImpl")  //这里引用了在业务实现类中创建的业务
     private UsersService usersService; //业务接口

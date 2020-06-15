@@ -6,32 +6,49 @@ import qin.com.entity.Users;
 import qin.com.mapper.UsersMapper;
 import qin.com.service.UsersService;
 
-@Service("usersServiceImpl") //表示它是一个业务类，我们可以在控制器中调用它
+@Service("usersServiceImpl")//表示业务类的注解，在控制其中使用usersServiceImpl缩写调用即可，Spring自动搜索qin.com下的该类
 public class UsersServiceImpl implements UsersService {
-    @Autowired  //表示紧跟它定义的变量会被自动的进行封装。
-    private UsersMapper usersMapper; //即usersMapper变量不用进行get和set设置
 
-    //下面的方法用于向UsersMapper进行对数据表users进行操作。
+    @Autowired //表示紧跟在它定义的变量会自动进行封装，即添加getXX()、setXX()方法
+    private UsersMapper usersMapper;//即 usersMapper 变量不用进行get和set的设置。
+
+    /**
+     * 等价于以下
+     * */
+//    public UsersMapper getUsersMapper(){
+//        return usersMapper;
+//    }
+//
+//    public void setUsersMapper(UsersMapper usersMapper){
+//        this.usersMapper = usersMapper;
+//    }
+
+    @Override
     public int deleteByPrimaryKey(Long id) {
         return 0;
     }
 
+    @Override
     public int insert(Users record) {
         return 0;
     }
 
+    @Override
     public int insertSelective(Users record) {
         return 0;
     }
 
+    @Override
     public Users selectByPrimaryKey(Integer id) {
-        return usersMapper.selectByPrimaryKey(id);//根据users数据表的id进行查询
+        return usersMapper.selectByPrimaryKey(id);//调用接口，Mybatis自动转换方法
     }
 
+    @Override
     public int updateByPrimaryKeySelective(Users record) {
         return 0;
     }
 
+    @Override
     public int updateByPrimaryKey(Users record) {
         return 0;
     }

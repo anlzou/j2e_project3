@@ -54,7 +54,7 @@
             <param-name>contextConfigLocation</param-name>
 
             <!--默认名称为ServletName-servlet.xml -->
-            <param-value>classpath:qin.com.mapper/spring-mvc.xml</param-value>
+            <param-value>classpath:spring-mvc.xml</param-value>
         </init-param>
 
     </servlet>

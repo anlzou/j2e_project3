@@ -3,7 +3,7 @@ package qin.com.mapper;
 import qin.com.entity.Users;
 
 public interface UsersMapper {
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(Users record);
 
